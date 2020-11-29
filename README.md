@@ -28,6 +28,3 @@ There are two ways of script: parameter and interactive
 ./fusion-vmcli.sh start 1
 ```
 ![parameter](https://github.com/iotd/vmware-fusion-vmcli-nogui/blob/main/images/sample-02.png)
-
-##### zh_CN 中文说明
-[中文说明](https://github.com/iotd/vmware-fusion-vmcli-nogui/blob/main/README_CN.md)
