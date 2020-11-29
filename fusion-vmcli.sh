@@ -88,7 +88,7 @@ function task_exec(){
         exit
     fi
 
-    if [[ $serial_num -le 0 || $serial_num -gt ${#vms[@]} ]]; then
+    if [[ $serial_num -le 0 || $serial_num -gt ${list_total} ]]; then
         echo -e "${RED_COLOR}[error] serial_num is not range (1-${list_total})${RES}\n"
         exit
     fi
