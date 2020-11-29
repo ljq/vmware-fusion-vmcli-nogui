@@ -25,21 +25,40 @@ RES="\033[0m"
 # Show List VMS
 function show_vms(){
     local vms=($1)
+    local total=$2
     local num=1
-    echo -e "${GREEN_BG_COLOR}=============== VM List (Total: ${#vms[@]}) ===============${RES}\n"
+    echo -e "${GREEN_BG_COLOR}=============== VM List (by Linux distribution) ===============${RES}\n"
     for dirname in ${vms[@]}
     do
         #filter Win
         dirname=${dirname//.vmwarevm/}
         if [[ "${dirname}" =~ "Win" ]]; then
             continue
+        else
+            # escape filename
+            esc_dirname=${dirname//#/\\ }
+            echo -e "[${num}] ${esc_dirname}\n"
+            ((num=num+1))
         fi
-        # escape filename
-        esc_dirname=${dirname//#/\\ }
-        echo -e "[${num}] ${esc_dirname}\n"
-        ((num=num+1))
     done
-    echo -e "${GREEN_BG_COLOR}=============== List End ===============${RES}\n"
+    echo -e "${GREEN_BG_COLOR}[Statistics] linux distribution total：${total} vm nodes.${RES}\n"
+    echo -e "${GREEN_BG_COLOR}======================= VM List End ============================${RES}\n"
+}
+
+# get vm total number
+function vm_nodes_total(){
+    local vms=($1)
+    local total=0
+    for dirname in ${vms[@]}
+    do
+        #filter Win
+        if [[ "${dirname}" =~ "Win" ]]; then
+            continue
+        else
+            ((total=total+1))
+        fi
+    done
+    echo $total
 }
 
 # Task Exec
@@ -77,11 +96,12 @@ function task_exec(){
         dirname=${dirname//.vmwarevm/}
         if [[ "${dirname}" =~ "Win" ]]; then
             continue
+        else
+            # escape filename
+            esc_dirname=${dirname//#/\\ }
+            vm_nodes[$num]=$esc_dirname
+            ((num=num+1))
         fi
-        # escape filename
-        esc_dirname=${dirname//#/\\ }
-        vm_nodes[$num]=$esc_dirname
-        ((num=num+1))
     done
     
     # select node machine
@@ -117,6 +137,7 @@ if [ -z "$vm_path" ]; then
 fi
 # list dir and process filename space
 list_vms=($(ls $vm_path | tr " " "\#"))
+list_total=$(vm_nodes_total "${list_vms[*]}")
 # vmrun params exec
 if [[ ! -z $1 || ! -z $2 ]]; then
     # direct exec
@@ -126,9 +147,9 @@ if [[ ! -z $1 || ! -z $2 ]]; then
     exit;
 else
     # show list
-    show_vms "${list_vms[*]}"
+    show_vms "${list_vms[*]}" $list_total
     # interactive exec
-    echo -e "${YELLOW_COLOR}[Notice] Please input your vm operate(start|stop|suspend|pause|unpause) and number(1-${#list_vms[@]})：${RES}\n"
+    echo -e "${YELLOW_COLOR}[Notice] Please input your vm operate(start|stop|suspend|pause|unpause) and number(1-${list_total})：${RES}\n"
     read operate serial_num 
     # cli interactive
     task_exec $operate $serial_num "${list_vms[*]}" $vm_path
