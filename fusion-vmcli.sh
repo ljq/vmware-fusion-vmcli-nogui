@@ -12,7 +12,7 @@
 # virtual machines path (custom)
 vm_path="/Users/$(whoami)/VmwareFusionPro"
 
-# version
+# custom version
 cli_version="1.0.0"
 # color green
 GREEN_COLOR="\033[32m"
@@ -22,7 +22,7 @@ RES="\033[0m"
 
 # ---------------------- Functions -------------------------
 
-# Show List VMS
+# Show list vm nodes
 function show_vms(){
     local vms=($1)
     local total=$2
@@ -61,7 +61,7 @@ function vm_nodes_total(){
     echo $total
 }
 
-# Task Exec
+# Task exec
 function task_exec(){
     # check params
     local operate=$1
@@ -114,7 +114,7 @@ function task_exec(){
     echo -e "${GREEN_COLOR}----------------------------------------------------------${RES}\n"
 }
 
-# Show VMS Running
+# Show vm nodes running
 function vms_runing(){
     echo -e "${GREEN_BG_COLOR}=============== VM Runing List ===============${RES}\n"
     "$(which vmrun)" list
@@ -125,7 +125,7 @@ function vms_runing(){
 
 # ---------------------- Task Process -------------------------
 
-#check vmware fusion installed status
+# check vmware fusion installed status
 if which vmrun >/dev/null 2>&1; then
     echo -e "vmcli fusion verson: ${cli_version}.\n"
 else
@@ -142,7 +142,6 @@ list_total=$(vm_nodes_total "${list_vms[*]}")
 if [[ ! -z $1 || ! -z $2 ]]; then
     # direct exec
     task_exec $1 $2 "${list_vms[*]}" $vm_path
-
     vms_runing
     exit;
 else
@@ -153,9 +152,7 @@ else
     read operate serial_num 
     # cli interactive
     task_exec $operate $serial_num "${list_vms[*]}" $vm_path
-
     vms_runing
     exit
 fi
-echo -e "[Notice] Task is done.\n"
 exit
