@@ -30,6 +30,11 @@ brew install vmware-fusion-vmcli-nogui
 
 ##### 用法
 
+The command lin额：
+```
+fusion-vmcli -h
+```
+
 ```
 
 [用法]:[-l | list] [start|stop|suspend|pause|unpause <number>] [-h | -help |——help] [-v | -v |——version]

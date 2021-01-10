@@ -29,6 +29,8 @@ brew install vmware-fusion-vmcli-nogui
 
 ##### Useage
 
+The command line：
+
 ```
 fusion-vmcli -h
 ```
