@@ -17,6 +17,7 @@ Related support:
 
 ##### homebrew-tap and install
 
+
 ![homebrew-tap](https://github.com/iotd/vmware-fusion-vmcli-nogui/blob/main/images/homebrew-tap.png)
 
 The tap sources are located under the usrlab@Github organization：
@@ -27,6 +28,12 @@ brew tap usrlab/tap
 
 brew install vmware-fusion-vmcli-nogui
 
+```
+
+# virtual machines default path，Resources are changed to this path (A temporary solution：custom，Followed to the configuration file)
+
+```
+mkdir -p /Users/$(whoami)/VmwareFusionPro
 ```
 
 ##### Useage
