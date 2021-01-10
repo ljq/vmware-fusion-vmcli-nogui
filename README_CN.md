@@ -18,6 +18,8 @@
 
 ##### 安装方式（homebrew-tap）
 
+![homebrew-tap](https://github.com/iotd/vmware-fusion-vmcli-nogui/blob/main/images/homebrew-tap.png)
+
 tap源放在组织usrlab下：
 
 ```
