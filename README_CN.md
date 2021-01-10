@@ -16,6 +16,18 @@
 
 ##### 用法
 
+```
+
+[用法]:[-l | list] [start|stop|suspend|pause|unpause <number>] [-h | -help |——help] [-v | -v |——version]
+
+[帮助说明]
+    -h|help:显示帮助信息。
+    -l|list: default[无参数说明]show VMs list and VMs status。
+    启动|停止|暂停暂停| | unpause[数字]:
+    启动相应的虚拟机[仅基于Linux的发行版]。
+    
+```
+
 脚本分为参数和交互式两种方式：
 
 * 1.交互式：

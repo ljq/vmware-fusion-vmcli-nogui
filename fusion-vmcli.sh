@@ -12,15 +12,30 @@
 # virtual machines path (custom)
 vm_path="/Users/$(whoami)/VmwareFusionPro"
 
-# custom version
-cli_version="1.0.0"
+# script version
+CLI_VERSION="1.0.1"
+
 # color green
 GREEN_COLOR="\033[32m"
+CYAN_COLOR="\033[36m"
 YELLOW_COLOR="\033[43;37m"
 RED_COLOR="\033[31m"
 GREEN_BG_COLOR="\033[47;46m"
 CYAN_BG_COLOR="\033[47;42m"
 RES="\033[0m"
+
+# help info
+USEAGE="[usage]: [-l | list] [start|stop|suspend|pause|unpause <number>] [-h | -help | --help] [-v | -V | --version]"
+HELP_INFO=$(cat <<EOF
+[helptext]
+    -h|help : Show help info.
+    -l|list : default[None parameters] show VMs list and VMs status.
+    start|stop|suspend|pause|unpause [number] : 
+        Start the corresponding virtual machine [Linux based distribution only].
+    
+    Notice: default show VMs list.
+EOF
+)
 
 # ---------------------- Functions -------------------------
 
@@ -135,10 +150,26 @@ function vms_runing(){
 
 # check vmware fusion installed status
 if which vmrun >/dev/null 2>&1; then
-    echo -e "vmcli fusion verson: ${cli_version}."
+    vmrun_version=$(vmrun | grep "vmrun version")
+    echo -e "${CYAN_COLOR}${vmrun_version}.${RES}"
+    echo -e "${USEAGE}"
 else
     echo -e "${YELLOW_COLOR}[Warning] vmrun is not installd.${RES}\n"
 fi
+
+# help
+case $1 in
+    "-v"|"-V"|"--version")
+        echo -e "cli script version：${CLI_VERSION}."
+        exit
+        ;;
+    "-h"|"-help"|"--help") 
+        echo -e "${HELP_INFO}"
+        exit
+        ;;
+    "-l"|"list") 
+        ;;
+esac
 
 if [ -z "$vm_path" ]; then
     vm_path="/Users/$(whoami)/Documents/Virtual\ Machines.localized"
@@ -147,7 +178,7 @@ fi
 list_vms=($(ls $vm_path | tr " " "\#"))
 list_total=$(vm_nodes_total "${list_vms[*]}")
 # vmrun params exec
-if [[ ! -z $1 || ! -z $2 ]]; then
+if [[ ! -z $1 && ! -z $2 ]]; then
     # direct exec
     task_exec $1 $2 "${list_vms[*]}" $vm_path $list_total
     vms_runing

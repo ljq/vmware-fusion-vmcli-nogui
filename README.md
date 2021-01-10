@@ -15,6 +15,20 @@ Related support:
 - [ ] HomeBrew Formula
 
 ##### Useage
+
+```
+[usage]: [-l | list] [start|stop|suspend|pause|unpause <number>] [-h | -help | --help] [-v | -V | --version]
+
+[helptext]
+    -h|help : Show help info.
+    -l|list : default[None parameters] show VMs list and VMs status.
+    start|stop|suspend|pause|unpause [number] : 
+        Start the corresponding virtual machine [Linux based distribution only].
+    
+    Notice: default show VMs list.
+
+```
+
 There are two ways of script: parameter and interactive
 
 * 1.interactive：
