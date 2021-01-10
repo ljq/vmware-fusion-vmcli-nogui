@@ -38,7 +38,7 @@ brew install vmware-fusion-vmcli-nogui
 # 虚拟实例默认路径，资源改到此路径 (临时方案：自定义，后续放到配置文件定义)
 
 ```
-mkdir -p /Users/$(whoami)/VmwareFusionPro
+mkdir -p ~/VmwareFusionPro
 ```
 
 ##### 用法

@@ -33,7 +33,7 @@ brew install vmware-fusion-vmcli-nogui
 # virtual machines default path，Resources are changed to this path (A temporary solution：custom，Followed to the configuration file)
 
 ```
-mkdir -p /Users/$(whoami)/VmwareFusionPro
+mkdir -p ~/VmwareFusionPro
 ```
 
 ##### Useage
