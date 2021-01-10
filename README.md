@@ -11,10 +11,27 @@ Related support:
 - [x] Read the list of all virtual machine instances in the system or custom path (supports virtual host names with spaces)
 - [x] Virtual machine instance specified by no interface shortcut
 - [x] List|start|stop|suspend|pause|pause|unpause operation is satisfied based on vmrun
+- [x] homebrew-tap Formula(usrlab/tap)
 - [ ] clone virtual machine instance, customize network parameter configuration, make it convenient for developers to create instances at low cost
 - [ ] HomeBrew Formula
 
+##### homebrew-tap and install
+
+The tap sources are located under the usrlab@Github organization：
+
+```
+
+brew tap usrlab/tap
+
+brew install vmware-fusion-vmcli-nogui
+
+```
+
 ##### Useage
+
+```
+fusion-vmcli -h
+```
 
 ```
 [usage]: [-l | list] [start|stop|suspend|pause|unpause <number>] [-h | -help | --help] [-v | -V | --version]

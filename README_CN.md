@@ -11,8 +11,22 @@
 - [x] 读取系统或自定义路径所有虚拟机实例列表(支持含空格虚拟主机名称)
 - [x] 无界面(No GUI)快捷操作指定的虚拟机实例
 - [x] 基于```vmrun```满足list|start|stop|suspend|pause|unpause操作
+- [x] homebrew-tap Formula(usrlab/tap)
 - [ ] 克隆虚拟机实例自定义网络参数配置，方便开发者低成本创建实例
 - [ ] HomeBrew Formula
+
+
+##### 安装方式（homebrew-tap）
+
+tap源放在组织usrlab下：
+
+```
+
+brew tap usrlab/tap
+
+brew install vmware-fusion-vmcli-nogui
+
+```
 
 ##### 用法
 
