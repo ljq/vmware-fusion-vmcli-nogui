@@ -17,6 +17,8 @@ Related support:
 
 ##### homebrew-tap and install
 
+![homebrew-tap](https://github.com/iotd/vmware-fusion-vmcli-nogui/blob/main/images/homebrew-tap.png)
+
 The tap sources are located under the usrlab@Github organization：
 
 ```
