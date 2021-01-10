@@ -4,7 +4,7 @@
 For Linux hairstyle version, developers only need to enable virtual machine instance in most scenarios, no GUI is running, and VMware does not provide relevant management commands, and there is no need to start VMware It is convenient for developers to input and close the application, and it is convenient for developers to input and close the application.   
 You can make relevant task scripts and development configurations according to your own needs.  
   
-[中文说明](https://github.com/iotd/vmware-fusion-vmcli-nogui/blob/main/README_CN.md)  
+[简体中文](https://github.com/iotd/vmware-fusion-vmcli-nogui/blob/main/README_CN.md)  
   
 Related support:
   
