@@ -30,7 +30,7 @@ brew install vmware-fusion-vmcli-nogui
 
 ```
 
-# virtual machines default path，Resources are changed to this path 
+##### virtual machines default path，Resources are changed to this path 
 
 ###### (a temporary solution：custom，Followed to the configuration file)
 
