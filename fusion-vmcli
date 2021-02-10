@@ -185,6 +185,9 @@ esac
 
 # virtual machines path config (custom)
 vm_path=$(etc_ini "vm_path")
+current_user=$(whoami)
+vm_path="${vm_path//\$\(whoami\)/${current_user}}"
+
 if [ -z "$vm_path" ]; then
     vm_path="/Users/$(whoami)/Documents/Virtual Machines.localized"
     # check default vm path
@@ -198,7 +201,7 @@ if [ -z "$vm_path" ]; then
 fi
 
 # list dir and process filename space
-list_vms=($(ls $vm_path | tr " " "\#"))
+list_vms=($(ls ${vm_path} | tr " " "\#"))
 list_total=$(vm_nodes_total "${list_vms[*]}")
 # vmrun params exec
 if [[ ! -z $1 && ! -z $2 ]]; then
