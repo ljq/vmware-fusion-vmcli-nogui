@@ -37,6 +37,13 @@ brew install vmware-fusion-vmcli-nogui
 
 ```
 
+or
+
+```
+brew install usrlab/tap/vmware-fusion-vmcli-nogui
+```
+
+
 ```
 mkdir -p ~/VmwareFusionPro
 
