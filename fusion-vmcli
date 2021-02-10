@@ -196,8 +196,7 @@ if [ -z "$vm_path" ]; then
         exit
     fi
 fi
-echo $vm_path
-exit
+
 # list dir and process filename space
 list_vms=($(ls $vm_path | tr " " "\#"))
 list_total=$(vm_nodes_total "${list_vms[*]}")
