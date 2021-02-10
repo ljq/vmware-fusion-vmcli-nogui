@@ -20,6 +20,10 @@ Related support:
 
 ##### homebrew-tap and install
 
+System application default path:
+```
+~/Documents/Virtual\ Machines.localized
+```
 
 ![homebrew-tap](https://github.com/iotd/vmware-fusion-vmcli-nogui/blob/main/images/homebrew-tap.png)
 
@@ -33,12 +37,10 @@ brew install vmware-fusion-vmcli-nogui
 
 ```
 
-##### virtual machines default path，Resources are changed to this path 
-
-###### (a temporary solution：custom，Followed to the configuration file)
-
 ```
 mkdir -p ~/VmwareFusionPro
+
+vim /usr/local/etc/fusion-vmcli.conf
 ```
 
 ##### Useage

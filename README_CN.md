@@ -21,14 +21,14 @@
 
 ##### 安装方式（homebrew-tap）
 
-默认路径：
+系统应用默认路径：
 ```
-~/Documents/Virtual\
+~/Documents/Virtual\ Machines.localized
 ```
 
 ![homebrew-tap](https://github.com/iotd/vmware-fusion-vmcli-nogui/blob/main/images/homebrew-tap.png)
 
-tap源放在组织usrlab下：
+tap源放在组织usrlab@Github下：
 
 ```
 
@@ -38,17 +38,13 @@ brew install vmware-fusion-vmcli-nogui
 
 ```
 
-##### 虚拟实例默认路径，资源改到此路径 
-
-###### (临时方案：自定义，后续放到配置文件定义)
-
 ```
 mkdir -p ~/VmwareFusionPro
 ```
 
 ##### 用法
 
-The command lin额：
+The command line：
 ```
 fusion-vmcli -h
 ```
