@@ -12,6 +12,9 @@
 - [x] 无界面(No GUI)快捷操作指定的虚拟机实例
 - [x] 基于```vmrun```满足list|start|stop|suspend|pause|unpause操作
 - [x] homebrew-tap Formula(usrlab/tap)
+- [x] 配置文件支持
+- [ ] 基于Linux发型版实例磁盘空间整理、回收
+- [ ] 多路径支持
 - [ ] 克隆虚拟机实例自定义网络参数配置，方便开发者低成本创建实例
 - [ ] HomeBrew Formula
 

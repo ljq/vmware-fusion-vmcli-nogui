@@ -12,6 +12,9 @@ Related support:
 - [x] Virtual machine instance specified by no interface shortcut
 - [x] List|start|stop|suspend|pause|pause|unpause operation is satisfied based on vmrun
 - [x] homebrew-tap Formula(usrlab/tap)
+- [x] Configuration file support
+- [ ] Disk space collection based on Linux hairstyle instance
+- [ ] Multipath support
 - [ ] clone virtual machine instance, customize network parameter configuration, make it convenient for developers to create instances at low cost
 - [ ] HomeBrew Formula
 
