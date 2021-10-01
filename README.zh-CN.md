@@ -18,6 +18,7 @@
 - [ ] 克隆虚拟机实例自定义网络参数配置，方便开发者低成本创建实例
 - [ ] HomeBrew Formula
 
+![fusion-fwk](images/fusion-fwk.png)
 
 ##### 安装方式（homebrew-tap）
 

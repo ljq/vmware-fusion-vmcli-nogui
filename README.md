@@ -18,6 +18,8 @@ Related support:
 - [ ] clone virtual machine instance, customize network parameter configuration, make it convenient for developers to create instances at low cost
 - [ ] HomeBrew Formula
 
+![fusion-fwk](images/fusion-fwk.png)
+
 ##### homebrew-tap and install
 
 System application default path:
