@@ -77,12 +77,12 @@ There are two ways of script: parameter and interactive
 
 * 1.interactive：
 ```
-./fusion-vmcli
+fusion-vmcli
 ```
 ![interactive](https://github.com/ljq/vmware-fusion-vmcli-nogui/blob/main/images/sample-01.png)
 
 * 2.parameter：
 ```
-./fusion-vmcli start 1
+fusion-vmcli start 1
 ```
 ![parameter](https://github.com/ljq/vmware-fusion-vmcli-nogui/blob/main/images/sample-02.png)
