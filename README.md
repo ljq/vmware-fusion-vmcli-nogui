@@ -20,6 +20,22 @@ Related support:
 
 ![fusion-fwk](images/fusion-fwk.png)
 
+```mermaid
+graph LR
+    A[fusion-vmcli] 
+    A -->B[install]
+    A -->C[config]
+    A -->D[command]
+
+    B --> B1( brew tap usrlab/tap <br /> brew install vmware-fusion-vmcli-nogui )
+
+    C --> C1> /usr/local/etc/fusion-vmcli.conf ]
+
+    D --> D1( Help Document )
+
+
+```
+
 ##### homebrew-tap and install
 
 System application default path:
