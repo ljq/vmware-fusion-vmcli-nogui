@@ -29,7 +29,7 @@ graph LR
 
     B --> B1( brew tap usrlab/tap <br /> brew install vmware-fusion-vmcli-nogui )
 
-    C --> C1( /usr/local/etc/fusion-vmcli.conf )
+    C --> C1> /usr/local/etc/fusion-vmcli.conf ]
 
     D --> D1( Help Document )
 
