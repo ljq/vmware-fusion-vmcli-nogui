@@ -201,12 +201,12 @@ if [ -z "$vm_path" ]; then
 fi
 
 # list dir and process filename space
-list_vms=($(ls ${vm_path} | tr " " "\#"))
+list_vms=($(ls "${vm_path}" | tr " " "\#"))
 list_total=$(vm_nodes_total "${list_vms[*]}")
 # vmrun params exec
 if [[ ! -z $1 && ! -z $2 ]]; then
     # direct exec
-    task_exec $1 $2 "${list_vms[*]}" $vm_path $list_total
+    task_exec $1 $2 "${list_vms[*]}" "$vm_path" $list_total
     vms_runing
 else
     # show list
